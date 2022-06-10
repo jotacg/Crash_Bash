@@ -10,6 +10,11 @@ public class MultiplayerSpawner : MonoBehaviour
     // Instances
     public static MultiplayerSpawner instance = null;
 
+    public static bool jugador1 = false;    // Variable global para saber si el jugador uno esta en la partida (true) o no (false)
+    public static bool jugador2 = false;    // Variable global para saber si el jugador dos esta en la partida (true) o no (false)
+    public static bool jugador3 = false;    // Variable global para saber si el jugador tres esta en la partida (true) o no (false)
+    public static bool jugador4 = false;    // Variable global para saber si el jugador cuatro esta en la partida (true) o no (false)
+    
     private void Awake(){
         if(instance == null){
             instance = this;
@@ -24,12 +29,48 @@ public class MultiplayerSpawner : MonoBehaviour
     }
 
     void OnPlayerJoined(PlayerInput playerInput){
-        playerList.Add(playerInput);
-        playerInput.transform.parent.localEulerAngles = spawnPoints[playerList.Count - 1].transform.localEulerAngles;
-        Debug.Log(spawnPoints[0].transform.localEulerAngles);
+        playerList.Add(playerInput);                // Añade un jugador a la partida
+        switch(playerList.Count)
+        {                               // Cuando vayan entrando los jugadores sus variables de cotrol se iran poniendo a true
+            case 1:
+                jugador1 = true;
+                break;
+            case 2:
+                jugador2 = true;
+                break;
+            case 3:
+                jugador3 = true;
+                break;
+            case 4:
+                jugador4 = true;
+                break;
+        }
+
+        playerInput.transform.parent.localEulerAngles = spawnPoints[playerList.Count - 1].transform.localEulerAngles;   // Comprueba los puntos de spawneo y pone al jugador en el primero no ocupado
+        //Debug.Log(spawnPoints[0].transform.localEulerAngles);
+        //Debug.Log(playerList.Count);
+        //Debug.Log("Player 1" + jugador1);
+        //Debug.Log("Player 2" + jugador2);
+        //Debug.Log("Player 3" + jugador3);
+        //Debug.Log("Player 4" + jugador4);
     }
 
     void OnPlayerLeft(PlayerInput playerInput){
-        
+        switch(playerList.Count)
+        {                               // Cuando vayan entrando los jugadores sus variables de cotrol se iran poniendo a true
+            case 0:
+                jugador1 = false;
+                break;
+            case 1:
+                jugador2 = false;
+                break;
+            case 2:
+                jugador3 = false;
+                break;
+            case 3:
+                jugador4 = false;
+                break;
+        }
+
     }
 }

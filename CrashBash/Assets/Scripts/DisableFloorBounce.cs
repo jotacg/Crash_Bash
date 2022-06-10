@@ -8,7 +8,6 @@ public class DisableFloorBounce : MonoBehaviour
     public PhysicMaterial bounce;
     public GameObject Trigger;
     public GameObject DestroyTrigger;
-
     public PhysicMaterial StartPhyMat;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +28,8 @@ public class DisableFloorBounce : MonoBehaviour
             if (collision.gameObject.name == Trigger.name)  
             {
                 GetComponent<Collider>().material = bounce;
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;   // Nota: Esto sirve para que no haya bugs de que las bolas boten
+                                                                                                // cuando chocan entre ellas (congela el eje y)
                // GetComponent<Collider>().
                 control = true;                                 // Variable de control a true para que no se cambie mas
             }

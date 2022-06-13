@@ -127,5 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounce: {fileID: 13400000, guid: 3e894f377106a82469f4d9acf3e0639b, type: 2}
   Trigger: {fileID: 3090216733780489549, guid: 0a3de6ea38daf334d937acd079160615, type: 3}
-  DestroyTrigger: {fileID: 4624678054547085759, guid: 79fc4d7a335387846b23c9fd93b812d6, type: 3}
+  DestroyTrigger:
+  - {fileID: 1648031092920125994, guid: b552200cc8a56544cab6aa3aed8d15a8, type: 3}
+  - {fileID: 1056336826382554645, guid: 9c52c6d34bdcc414f8832df3effd4bb3, type: 3}
+  - {fileID: 4469175071421768245, guid: 7011711197b48254e89de49f50988801, type: 3}
+  - {fileID: 2808402725013875226, guid: 03ca5ee501b1afb438432a562d7a1856, type: 3}
   StartPhyMat: {fileID: 0}

@@ -7,7 +7,7 @@ public class DisableFloorBounce : MonoBehaviour
     private bool control = false;
     public PhysicMaterial bounce;
     public GameObject Trigger;
-    public GameObject DestroyTrigger;
+    public GameObject[] DestroyTrigger;
     public PhysicMaterial StartPhyMat;
     // Start is called before the first frame update
     void Start()
@@ -35,11 +35,46 @@ public class DisableFloorBounce : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.name == DestroyTrigger.name)
+        if(collision.gameObject.name == DestroyTrigger[0].name)
+        {
+            if(ScoreManager.player1Counter > 0)
+            {
+                ScoreManager.player1Counter--;
+            }
+            Destroy(gameObject);
+        }
+
+        if(collision.gameObject.name == DestroyTrigger[1].name)
+        {
+            if(ScoreManager.player2Counter > 0)
+            {
+                ScoreManager.player2Counter--;
+            }
+            Destroy(gameObject);
+        }
+
+        if(collision.gameObject.name == DestroyTrigger[2].name)
+        {
+            if(ScoreManager.player3Counter > 0)
+            {
+                ScoreManager.player3Counter--;
+            }
+            Destroy(gameObject);
+        }
+
+        if(collision.gameObject.name == DestroyTrigger[3].name)
+        {
+            if(ScoreManager.player4Counter > 0)
+            {
+                ScoreManager.player4Counter--;
+            }
+            Destroy(gameObject);
+        }
+/*        if (collision.gameObject.name == DestroyTrigger.name)
             {
                 Destroy(gameObject);                            // Cuando se cae la bola que se destruya
             }
-
+*/
         
     }
 }

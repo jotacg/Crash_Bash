@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WallManager : MonoBehaviour
 {
+    public GameObject barreraPlayer1;
     public GameObject barreraPlayer2;    // Este objeto sirve para activar y desactivar barreras de 
     public GameObject barreraPlayer3;
     public GameObject barreraPlayer4;
@@ -17,6 +18,10 @@ public class WallManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(MultiplayerSpawner.jugador1)         // Si el jugador 2 esta en la partida
+        {
+            barreraPlayer1.SetActive(false);    // Se desactiva la barrera de su lado
+        }
         if(MultiplayerSpawner.jugador2)         // Si el jugador 2 esta en la partida
         {
             barreraPlayer2.SetActive(false);    // Se desactiva la barrera de su lado

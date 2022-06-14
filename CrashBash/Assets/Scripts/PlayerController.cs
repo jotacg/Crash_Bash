@@ -13,10 +13,9 @@ public class PlayerController : MonoBehaviour
     private float inercia_der;  // Medicion momentum hacia la derecha
     private Vector3 initialVector = Vector3.forward;
     public float angleMax = 30.0f;
-    private PlayerInputActions playerInputActions;
-    private PlayerInput playerInput;
 
     private float inputValue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,38 +26,18 @@ public class PlayerController : MonoBehaviour
         inercia_der = inercia_base;   // son las velocidad base
     }
 
-    // Update is called once per frame
-
     public void MoveExec(InputAction.CallbackContext context){
         inputValue = context.ReadValue<float>();
     }
+
+    // Update is called once per frame
+
     void Update () {
         //float inputValue =  playerInputActions.Player.Movement.ReadValue<float>();
         //Debug.Log(inputValue);
         if(pivot != null){
             float rotateDegrees = 0f;
-            /*
-            if (Input.GetKey("a")){
 
-                if(inercia_izq < inercia_maxima){        // Si es menor que la inercia maxima
-                    inercia_izq += 1f * Time.deltaTime;  // se aumenta el momentum 
-                }
-
-                inercia_der = inercia_base;           // Se resetea el momentum en direccion contraria
-                rotateDegrees += 70f * Time.deltaTime;  // Vel de mov
-                
-            }
-            if (Input.GetKey("d")){
-
-                if(inercia_der < inercia_maxima){            // Si es menor que la velocidad maxima
-                    inercia_der += 1f * Time.deltaTime; // se aumenta el momentum
-                }
-
-                inercia_izq = inercia_base;            // Se resetea el momentum en direccion contraria
-                rotateDegrees -= 70f * Time.deltaTime;  // Vel de mov
-
-            }
-            */
             if(inputValue < 0.0f){
                 if(inercia_izq < inercia_maxima){        // Si es menor que la inercia maxima
                     inercia_izq += 1f * Time.deltaTime;  // se aumenta el momentum 
@@ -99,7 +78,6 @@ public class PlayerController : MonoBehaviour
             
             //Debug.Log(angleBetween);
             //Debug.Log(rotateDegrees);
-            
         }
     
     }

@@ -14,15 +14,20 @@ public class ShockWaveForce : MonoBehaviour
     [SerializeField] GameObject shockParticle;
     private PlayerInput playerInput;
 
+    void Awake()
+    {
+
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
 /*        
         if(timer >= timerRange && Input.GetKey("space"))    // Intervalos de 1.5 segundos para que no se utilice todo el rato
         {

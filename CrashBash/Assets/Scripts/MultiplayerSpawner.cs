@@ -48,14 +48,13 @@ public class MultiplayerSpawner : MonoBehaviour
 
         playerInput.transform.parent.localEulerAngles = spawnPoints[playerList.Count - 1].transform.localEulerAngles;   // Comprueba los puntos de spawneo y pone al jugador en el primero no ocupado
         //Debug.Log(spawnPoints[0].transform.localEulerAngles);
-        //Debug.Log(playerList.Count);
-        //Debug.Log("Player 1" + jugador1);
-        //Debug.Log("Player 2" + jugador2);
-        //Debug.Log("Player 3" + jugador3);
-        //Debug.Log("Player 4" + jugador4);
+
     }
 
     void OnPlayerLeft(PlayerInput playerInput){
+
+        Debug.Log("Se desconectó");
+
         switch(playerList.Count)
         {                               // Cuando vayan entrando los jugadores sus variables de cotrol se iran poniendo a true
             case 0:
@@ -72,5 +71,13 @@ public class MultiplayerSpawner : MonoBehaviour
                 break;
         }
 
+    }
+
+    private void Update()
+    {
+        if(ScoreManager.player1Counter <= 0)
+        {
+            //playerList.
+        }
     }
 }

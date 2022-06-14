@@ -11,15 +11,15 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player1Counter = player2Counter = player3Counter = player4Counter = 10;
+        player1Counter = player2Counter = player3Counter = player4Counter = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("n") && player1Counter > 0)
+        if(player1Counter <= 0)
         {
-            player1Counter--;
+            MultiplayerSpawner.jugador1 = false;
         }
     }
 }

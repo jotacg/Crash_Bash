@@ -7,9 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerConfigurationManager : MonoBehaviour
 {
+    public static bool jugador1 = false;    // Variable global para saber si el jugador uno esta en la partida (true) o no (false)
+    public static bool jugador2 = false;    // Variable global para saber si el jugador dos esta en la partida (true) o no (false)
+    public static bool jugador3 = false;    // Variable global para saber si el jugador tres esta en la partida (true) o no (false)
+    public static bool jugador4 = false;    // Variable global para saber si el jugador cuatro esta en la partida (true) o no (false)
+
     private List<PlayerConfiguration> playerConfigs;
-    [SerializeField]
-    private int MaxPlayers = 2;
+    //[SerializeField]
+    //private int MaxPlayers = 2;
 
     public static PlayerConfigurationManager Instance { get; private set; }
 
@@ -37,6 +42,21 @@ public class PlayerConfigurationManager : MonoBehaviour
         {
             playerConfigs.Add(new PlayerConfiguration(pi));
         }
+        switch(pi.playerIndex)
+        {                               // Cuando vayan entrando los jugadores sus variables de cotrol se iran poniendo a true
+            case 0:
+                jugador1 = true;
+                break;
+            case 1:
+                jugador2 = true;
+                break;
+            case 2:
+                jugador3 = true;
+                break;
+            case 3:
+                jugador4 = true;
+                break;
+        }
     }
 
     public List<PlayerConfiguration> GetPlayerConfigs()
@@ -52,7 +72,7 @@ public class PlayerConfigurationManager : MonoBehaviour
     public void ReadyPlayer(int index)
     {
         playerConfigs[index].isReady = true;
-        if (playerConfigs.Count == MaxPlayers && playerConfigs.All(p => p.isReady == true))
+        if (/*playerConfigs.Count == MaxPlayers && */ playerConfigs.All(p => p.isReady == true))
         {
             SceneManager.LoadScene("BallistixGame");
         }

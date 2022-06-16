@@ -19,7 +19,7 @@ public class WallManager : MonoBehaviour
     void Update()
     {
         // JUGADOR 1
-        if(MultiplayerSpawner.jugador1)         // Si el jugador 1 esta en la partida
+        if(PlayerConfigurationManager.jugador1)         // Si el jugador 1 esta en la partida
         {
             barreraPlayer1.SetActive(false);    // Se desactiva la barrera de su lado
         }
@@ -29,7 +29,7 @@ public class WallManager : MonoBehaviour
         }
 
         // JUGADOR 2
-        if(MultiplayerSpawner.jugador2)         // Si el jugador 2 esta en la partida
+        if(PlayerConfigurationManager.jugador2)         // Si el jugador 2 esta en la partida
         {
             barreraPlayer2.SetActive(false);    // Se desactiva la barrera de su lado
         }
@@ -39,7 +39,7 @@ public class WallManager : MonoBehaviour
         }
 
         // JUGADOR 3
-        if(MultiplayerSpawner.jugador3)         // Si el jugador 3 esta en la partida
+        if(PlayerConfigurationManager.jugador3)         // Si el jugador 3 esta en la partida
         {
             barreraPlayer3.SetActive(false);    // Se desactiva la barrera de su lado
         }
@@ -49,7 +49,7 @@ public class WallManager : MonoBehaviour
         }
 
         // JUGADOR 4
-        if(MultiplayerSpawner.jugador4)         // Si el jugador 4 esta en la partida
+        if(PlayerConfigurationManager.jugador4)         // Si el jugador 4 esta en la partida
         {
             barreraPlayer4.SetActive(false);    // Se desactiva la barrera de su lado
         }

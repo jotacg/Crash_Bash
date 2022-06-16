@@ -8,7 +8,9 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerConfiguration playerConfig;
-    //private Mover mover;
+    private PlayerController movement;
+    private TiltPlayerEffect tilt;
+    private ShockWaveForce shockWave;
 
     [SerializeField]
     private MeshRenderer playerMesh;
@@ -17,7 +19,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Awake()
     {
-        //mover = GetComponent<Mover>();
+        movement = GetComponent<PlayerController>();
+        tilt = GetComponentInChildren<TiltPlayerEffect>();
+        shockWave = GetComponent<ShockWaveForce>();
+
         controls = new PlayerInputActions();
     }
 
@@ -25,23 +30,37 @@ public class PlayerInputHandler : MonoBehaviour
     {
         playerConfig = config;
         playerMesh.material = config.playerMaterial;
-        //config.Input.onActionTriggered += Input_onActionTriggered;
+        config.Input.onActionTriggered += Input_onActionTriggered;
     }   
 
     private void Input_onActionTriggered(CallbackContext obj)
     {
 
-        if (obj.action.name == controls.Menu.Movement.name)
+        if (obj.action.name == controls.Player.Movement.name)
         {
             OnMove(obj);
+        }
+        if (obj.action.name == controls.Player.ShockWave.name)
+        {
+            OnShock(obj);
         }
         
     }
 
     public void OnMove(CallbackContext context)
     {
-        //if(mover != null)
-        //    mover.SetInputVector(context.ReadValue<Vector2>());
+        if(movement != null)
+        {
+            movement.MoveExec(context);
+            tilt.TiltExec(context);
+        }
     }
     
+    public void OnShock(CallbackContext context)
+    {
+        if(shockWave != null)
+        {
+            shockWave.ExecShockWave(context);
+        }
+    }
 }

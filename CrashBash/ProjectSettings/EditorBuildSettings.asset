@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/BallistixCharacterSelection.unity
+    guid: 333fc47b8fa563241986c282f94c1ac6
+  - enabled: 1
     path: Assets/Scenes/BallistixGame.unity
     guid: 009e631ffbf750a469c02cbdfc434285
   m_configObjects: {}

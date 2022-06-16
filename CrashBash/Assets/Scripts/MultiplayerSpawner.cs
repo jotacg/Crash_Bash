@@ -14,6 +14,8 @@ public class MultiplayerSpawner : MonoBehaviour
     public static bool jugador2 = false;    // Variable global para saber si el jugador dos esta en la partida (true) o no (false)
     public static bool jugador3 = false;    // Variable global para saber si el jugador tres esta en la partida (true) o no (false)
     public static bool jugador4 = false;    // Variable global para saber si el jugador cuatro esta en la partida (true) o no (false)
+
+    public static int numJugadores = 0;     // Variable para llevar la cuenta de los jugadores en la sala
     
     private void Awake(){
         if(instance == null){
@@ -46,6 +48,8 @@ public class MultiplayerSpawner : MonoBehaviour
                 break;
         }
 
+        numJugadores++;
+
         playerInput.transform.parent.localEulerAngles = spawnPoints[playerList.Count - 1].transform.localEulerAngles;   // Comprueba los puntos de spawneo y pone al jugador en el primero no ocupado
         //Debug.Log(spawnPoints[0].transform.localEulerAngles);
 
@@ -71,11 +75,12 @@ public class MultiplayerSpawner : MonoBehaviour
                 break;
         }
 
+        numJugadores--;
     }
 
     private void Update()
     {
-        if(ScoreManager.player1Counter <= 0)
+        if(ScoreManager.playerCounter[0] <= 0)
         {
             //playerList.
         }

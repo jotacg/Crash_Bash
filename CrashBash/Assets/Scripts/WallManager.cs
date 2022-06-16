@@ -23,7 +23,7 @@ public class WallManager : MonoBehaviour
         {
             barreraPlayer1.SetActive(false);    // Se desactiva la barrera de su lado
         }
-        if(ScoreManager.player1Counter <= 0)
+        if(ScoreManager.playerCounter[0] <= 0)
         {
             barreraPlayer1.SetActive(true);
         }
@@ -33,7 +33,7 @@ public class WallManager : MonoBehaviour
         {
             barreraPlayer2.SetActive(false);    // Se desactiva la barrera de su lado
         }
-        if(ScoreManager.player2Counter <= 0)
+        if(ScoreManager.playerCounter[1] <= 0)
         {
             barreraPlayer2.SetActive(true);
         }
@@ -43,7 +43,7 @@ public class WallManager : MonoBehaviour
         {
             barreraPlayer3.SetActive(false);    // Se desactiva la barrera de su lado
         }
-        if(ScoreManager.player3Counter <= 0)
+        if(ScoreManager.playerCounter[2] <= 0)
         {
             barreraPlayer3.SetActive(true);
         }
@@ -53,7 +53,7 @@ public class WallManager : MonoBehaviour
         {
             barreraPlayer4.SetActive(false);    // Se desactiva la barrera de su lado
         }
-        if(ScoreManager.player4Counter <= 0)
+        if(ScoreManager.playerCounter[3] <= 0)
         {
             barreraPlayer4.SetActive(true);
         }

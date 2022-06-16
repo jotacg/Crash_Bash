@@ -37,36 +37,36 @@ public class DisableFloorBounce : MonoBehaviour
 
         if(collision.gameObject.name == DestroyTrigger[0].name)
         {
-            if(ScoreManager.player1Counter > 0)
+            if(ScoreManager.playerCounter[0] > 0)
             {
-                ScoreManager.player1Counter--;
+                ScoreManager.playerCounter[0]--;
             }
             Destroy(gameObject);
         }
 
         if(collision.gameObject.name == DestroyTrigger[1].name)
         {
-            if(ScoreManager.player2Counter > 0)
+            if(ScoreManager.playerCounter[1] > 0)
             {
-                ScoreManager.player2Counter--;
+                ScoreManager.playerCounter[1]--;
             }
             Destroy(gameObject);
         }
 
         if(collision.gameObject.name == DestroyTrigger[2].name)
         {
-            if(ScoreManager.player3Counter > 0)
+            if(ScoreManager.playerCounter[2] > 0)
             {
-                ScoreManager.player3Counter--;
+                ScoreManager.playerCounter[2]--;
             }
             Destroy(gameObject);
         }
 
         if(collision.gameObject.name == DestroyTrigger[3].name)
         {
-            if(ScoreManager.player4Counter > 0)
+            if(ScoreManager.playerCounter[3] > 0)
             {
-                ScoreManager.player4Counter--;
+                ScoreManager.playerCounter[3]--;
             }
             Destroy(gameObject);
         }

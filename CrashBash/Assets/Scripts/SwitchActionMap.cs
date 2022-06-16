@@ -25,7 +25,7 @@ public class SwitchActionMap : MonoBehaviour
         {
             // JUGADOR 1
             case 0:
-                if(ScoreManager.player1Counter <= 0 && !switchedMap)        //  Si el score es menor o igual a 0 y no se ha hecho el cambio de Mapa 
+                if(ScoreManager.playerCounter[0] <= 0 && !switchedMap)        //  Si el score es menor o igual a 0 y no se ha hecho el cambio de Mapa 
                 {
                     //Debug.Log("aaaa");
                     //controlMap.actions.FindActionMap("Player").Disable();
@@ -35,7 +35,7 @@ public class SwitchActionMap : MonoBehaviour
             
             // JUGADOR 2
             case 1:
-                if(ScoreManager.player2Counter <= 0 && !switchedMap)        //  Si el score es menor o igual a 0 y no se ha hecho el cambio de Mapa 
+                if(ScoreManager.playerCounter[1] <= 0 && !switchedMap)        //  Si el score es menor o igual a 0 y no se ha hecho el cambio de Mapa 
                 {
                     //Debug.Log("aaaa");
                     //controlMap.actions.FindActionMap("Player").Disable();
@@ -45,7 +45,7 @@ public class SwitchActionMap : MonoBehaviour
             
             // JUGADOR 3
             case 2:
-                if(ScoreManager.player3Counter <= 0 && !switchedMap)        //  Si el score esmenor i gual a 0 y no se ha hecho el cambio de Mapa 
+                if(ScoreManager.playerCounter[2] <= 0 && !switchedMap)        //  Si el score esmenor i gual a 0 y no se ha hecho el cambio de Mapa 
                 {
                     //Debug.Log("aaaa");
                     //controlMap.actions.FindActionMap("Player").Disable();
@@ -55,7 +55,7 @@ public class SwitchActionMap : MonoBehaviour
 
             // JUGADOR 4
             case 3:
-                if(ScoreManager.player4Counter <= 0 && !switchedMap)        //  Si el score esmenor i gual a 0 y no se ha hecho el cambio de Mapa 
+                if(ScoreManager.playerCounter[3] <= 0 && !switchedMap)        //  Si el score esmenor i gual a 0 y no se ha hecho el cambio de Mapa 
                 {
                     //Debug.Log("aaaa");
                     //controlMap.actions.FindActionMap("Player").Disable();

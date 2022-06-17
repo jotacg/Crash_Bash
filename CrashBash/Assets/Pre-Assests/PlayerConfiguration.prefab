@@ -490,6 +490,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 5691348288156580706}
+  cameraSpawns:
+  - {fileID: 5712358980046153850, guid: a0917e206a3dc5b4a80f5a7dad7077fd, type: 3}
+  - {fileID: 2547294160328232418, guid: 1276a9c60a6f5734182137d26b155181, type: 3}
+  - {fileID: 595326038786251274, guid: ef15a0a77d4c1bf4790abcc5f3f5af2a, type: 3}
+  - {fileID: 5891009035851517551, guid: 95032601a7e40ac43a0852932f06987f, type: 3}
 --- !u!1 &8441441490876717322
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +600,7 @@ GameObject:
   - component: {fileID: 4488452867517999088}
   - component: {fileID: 737829215193555429}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

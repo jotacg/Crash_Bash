@@ -27,7 +27,7 @@ public class SwitchActionMap : MonoBehaviour
             case 0:
                 if(ScoreManager.playerCounter[0] <= 0 && !switchedMap)        //  Si el score es menor o igual a 0 y no se ha hecho el cambio de Mapa 
                 {
-                    //Debug.Log("aaaa");
+                    Debug.Log("aaaa");
                     //controlMap.actions.FindActionMap("Player").Disable();
                     controlMap.SwitchCurrentActionMap("Menu");
                 }

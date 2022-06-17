@@ -6,6 +6,7 @@ public class InitializeLevel : MonoBehaviour
 {
     [SerializeField]
     private Transform[] playerSpawns;
+
     [SerializeField]
     private GameObject playerPrefab;
 
@@ -15,9 +16,12 @@ public class InitializeLevel : MonoBehaviour
         var playerConfigs = PlayerConfigurationManager.Instance.GetPlayerConfigs().ToArray();
         for (int i = 0; i < playerConfigs.Length; i++)
         {
-            Debug.Log(i);
             var player = Instantiate(playerPrefab, playerSpawns[i].position, playerSpawns[i].rotation, playerSpawns[i].transform);
+            //player.transform.GetChild(0).transform.position = cameraSpawns[i].position;
+            //player.transform.GetChild(0).transform.rotation = cameraSpawns[i].rotation;
             player.GetComponentInChildren<PlayerInputHandler>().InitializePlayer(playerConfigs[i]);
+            //Debug.Log(player.transform.GetChild(0).transform.position);
+            
         }
     }
 

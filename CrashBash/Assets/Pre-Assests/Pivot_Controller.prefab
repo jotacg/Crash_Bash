@@ -232,7 +232,6 @@ GameObject:
   - component: {fileID: 713311482555339705}
   - component: {fileID: 672894874}
   - component: {fileID: 3712535136014024203}
-  - component: {fileID: 4333357465160451742}
   - component: {fileID: 1678412639277345590}
   m_Layer: 0
   m_Name: Player
@@ -309,96 +308,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713311482555339707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d0ee9d573553424cb17ac443802b0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisObject: {fileID: 713311482555339707}
---- !u!114 &4333357465160451742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713311482555339707}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: a57b4f9996f243944a6bebbd54708c0b, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 672894874}
-        m_TargetAssemblyTypeName: ShockWaveForce, Assembly-CSharp
-        m_MethodName: ExecShockWave
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ce4ddf11-7e01-4fd8-891a-868490326e64
-    m_ActionName: Player/ShockWave[/Keyboard/space,/BDA NSW wired controller/button2]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 713311482555339705}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: MoveExec
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 713311484037966435}
-        m_TargetAssemblyTypeName: TiltPlayerEffect, Assembly-CSharp
-        m_MethodName: TiltExec
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 1caafc7e-6afb-452d-af2d-63448c805ab5
-    m_ActionName: Player/Movement[/Keyboard/a,/Keyboard/d,/BDA NSW wired controller/hat/left,/BDA
-      NSW wired controller/hat/right,/BDA NSW wired controller/stick/left,/BDA NSW
-      wired controller/stick/right]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1213e2a9-eb64-4ff3-aaf3-38d871c48cb1
-    m_ActionName: Menu/New action
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 970b2529-5a56-4bdd-93ae-86463be6cc39
-    m_ActionName: Menu/Select[/Keyboard/space,/BDA NSW wired controller/button2]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 5331394104407825625}
 --- !u!114 &1678412639277345590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMesh: {fileID: 713311484037966462}
+  playerController: {fileID: 8144095137005340702, guid: 6a542ba70914a4a41b25553152c2f9bd, type: 3}
 --- !u!1 &713311484037966456
 GameObject:
   m_ObjectHideFlags: 0

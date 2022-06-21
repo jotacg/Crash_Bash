@@ -12,6 +12,8 @@ public class PlayerConfigurationManager : MonoBehaviour
     public static bool jugador3 = false;    // Variable global para saber si el jugador tres esta en la partida (true) o no (false)
     public static bool jugador4 = false;    // Variable global para saber si el jugador cuatro esta en la partida (true) o no (false)
 
+    private Scene scene;
+
     private List<PlayerConfiguration> playerConfigs;
     //[SerializeField]
     //private int MaxPlayers = 2;
@@ -20,6 +22,8 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Awake()
     {
+        scene = SceneManager.GetActiveScene();
+
         if(Instance != null)
         {
             Debug.Log("[Singleton] Trying to instantiate a seccond instance of a singleton class.");
@@ -35,28 +39,32 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     public void HandlePlayerJoin(PlayerInput pi)
     {
-        Debug.Log("player joined " + pi.playerIndex);
-        pi.transform.SetParent(transform);
-
-        if(!playerConfigs.Any(p => p.PlayerIndex == pi.playerIndex))
+        if(scene.name == "BallistixCharacterSelection")
         {
-            playerConfigs.Add(new PlayerConfiguration(pi));
+            Debug.Log("player joined " + pi.playerIndex);
+            pi.transform.SetParent(transform);
+
+            if(!playerConfigs.Any(p => p.PlayerIndex == pi.playerIndex))
+            {
+                playerConfigs.Add(new PlayerConfiguration(pi));
+            }
+            switch(pi.playerIndex)
+            {                               // Cuando vayan entrando los jugadores sus variables de cotrol se iran poniendo a true
+                case 0:
+                    jugador1 = true;
+                    break;
+                case 1:
+                    jugador2 = true;
+                    break;
+                case 2:
+                    jugador3 = true;
+                    break;
+                case 3:
+                    jugador4 = true;
+                    break;
+            }
         }
-        switch(pi.playerIndex)
-        {                               // Cuando vayan entrando los jugadores sus variables de cotrol se iran poniendo a true
-            case 0:
-                jugador1 = true;
-                break;
-            case 1:
-                jugador2 = true;
-                break;
-            case 2:
-                jugador3 = true;
-                break;
-            case 3:
-                jugador4 = true;
-                break;
-        }
+
     }
 
     public List<PlayerConfiguration> GetPlayerConfigs()
@@ -72,7 +80,7 @@ public class PlayerConfigurationManager : MonoBehaviour
     public void ReadyPlayer(int index)
     {
         playerConfigs[index].isReady = true;
-        if (/*playerConfigs.Count == MaxPlayers && */ playerConfigs.All(p => p.isReady == true))
+        if (playerConfigs.All(p => p.isReady == true))
         {
             SceneManager.LoadScene("BallistixGame");
         }

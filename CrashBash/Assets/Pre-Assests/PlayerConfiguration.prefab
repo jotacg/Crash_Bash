@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 8144095137005340701}
   - component: {fileID: -4673299396917160112}
   - component: {fileID: 5431002488014947818}
+  - component: {fileID: 266862128854601730}
   m_Layer: 0
   m_Name: PlayerConfiguration
   m_TagString: Untagged
@@ -490,11 +491,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 5691348288156580706}
+  camera: {fileID: 8709947167265492318}
   cameraSpawns:
   - {fileID: 5712358980046153850, guid: a0917e206a3dc5b4a80f5a7dad7077fd, type: 3}
   - {fileID: 2547294160328232418, guid: 1276a9c60a6f5734182137d26b155181, type: 3}
   - {fileID: 595326038786251274, guid: ef15a0a77d4c1bf4790abcc5f3f5af2a, type: 3}
   - {fileID: 5891009035851517551, guid: 95032601a7e40ac43a0852932f06987f, type: 3}
+--- !u!114 &266862128854601730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144095137005340702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0ee9d573553424cb17ac443802b0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8441441490876717322
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6727839197375558781
 Transform:
   m_ObjectHideFlags: 0

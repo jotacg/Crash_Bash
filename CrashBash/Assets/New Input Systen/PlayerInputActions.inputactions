@@ -208,7 +208,7 @@
             "id": "6e5edb4a-278a-47bc-ab19-f88bc37be3ce",
             "actions": [
                 {
-                    "name": "Movement",
+                    "name": "MenuMovement",
                     "type": "Value",
                     "id": "1213e2a9-eb64-4ff3-aaf3-38d871c48cb1",
                     "expectedControlType": "Vector2",
@@ -220,6 +220,15 @@
                     "name": "Select",
                     "type": "Button",
                     "id": "970b2529-5a56-4bdd-93ae-86463be6cc39",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "e53acc25-b109-4327-8350-7c12d258dddf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -267,7 +276,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MenuMovement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -278,7 +287,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "MenuMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -289,7 +298,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MenuMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -300,7 +309,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MenuMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -311,7 +320,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MenuMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -322,7 +331,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MenuMovement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -333,7 +342,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Playstation 4",
-                    "action": "Movement",
+                    "action": "MenuMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec16935a-9c3a-44c7-8f9d-fed6b602f570",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

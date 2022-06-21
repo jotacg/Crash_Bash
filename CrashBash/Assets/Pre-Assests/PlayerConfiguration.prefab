@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 5691348288156580706}
-  camera: {fileID: 8709947167265492318}
+  mainCamera: {fileID: 8709947167265492318}
   cameraSpawns:
   - {fileID: 5712358980046153850, guid: a0917e206a3dc5b4a80f5a7dad7077fd, type: 3}
   - {fileID: 2547294160328232418, guid: 1276a9c60a6f5734182137d26b155181, type: 3}

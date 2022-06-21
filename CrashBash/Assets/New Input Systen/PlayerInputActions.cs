@@ -246,15 +246,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Cancel"",
-                    ""type"": ""Button"",
-                    ""id"": ""e53acc25-b109-4327-8350-7c12d258dddf"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -370,12 +361,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ec16935a-9c3a-44c7-8f9d-fed6b602f570"",
-                    ""path"": ""<Keyboard>/b"",
+                    ""id"": ""bd3857a0-8faa-466e-ac28-b0706d0b0c35"",
+                    ""path"": ""<XInputController>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Cancel"",
+                    ""groups"": ""Xbox 360"",
+                    ""action"": ""MenuMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -415,6 +406,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Xbox 360"",
+            ""bindingGroup"": ""Xbox 360"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XboxOneGamepadAndroid>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -426,7 +428,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_MenuMovement = m_Menu.FindAction("MenuMovement", throwIfNotFound: true);
         m_Menu_Select = m_Menu.FindAction("Select", throwIfNotFound: true);
-        m_Menu_Cancel = m_Menu.FindAction("Cancel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -529,14 +530,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_MenuMovement;
     private readonly InputAction m_Menu_Select;
-    private readonly InputAction m_Menu_Cancel;
     public struct MenuActions
     {
         private @PlayerInputActions m_Wrapper;
         public MenuActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @MenuMovement => m_Wrapper.m_Menu_MenuMovement;
         public InputAction @Select => m_Wrapper.m_Menu_Select;
-        public InputAction @Cancel => m_Wrapper.m_Menu_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -552,9 +551,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
-                @Cancel.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
-                @Cancel.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
-                @Cancel.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -565,9 +561,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
-                @Cancel.started += instance.OnCancel;
-                @Cancel.performed += instance.OnCancel;
-                @Cancel.canceled += instance.OnCancel;
             }
         }
     }
@@ -599,6 +592,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_Playstation4SchemeIndex];
         }
     }
+    private int m_Xbox360SchemeIndex = -1;
+    public InputControlScheme Xbox360Scheme
+    {
+        get
+        {
+            if (m_Xbox360SchemeIndex == -1) m_Xbox360SchemeIndex = asset.FindControlSchemeIndex("Xbox 360");
+            return asset.controlSchemes[m_Xbox360SchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnShockWave(InputAction.CallbackContext context);
@@ -608,6 +610,5 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     {
         void OnMenuMovement(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
-        void OnCancel(InputAction.CallbackContext context);
     }
 }

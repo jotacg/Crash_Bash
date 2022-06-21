@@ -224,15 +224,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Cancel",
-                    "type": "Button",
-                    "id": "e53acc25-b109-4327-8350-7c12d258dddf",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -348,12 +339,12 @@
                 },
                 {
                     "name": "",
-                    "id": "ec16935a-9c3a-44c7-8f9d-fed6b602f570",
-                    "path": "<Keyboard>/b",
+                    "id": "bd3857a0-8faa-466e-ac28-b0706d0b0c35",
+                    "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Cancel",
+                    "groups": "Xbox 360",
+                    "action": "MenuMovement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -389,6 +380,17 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Xbox 360",
+            "bindingGroup": "Xbox 360",
+            "devices": [
+                {
+                    "devicePath": "<XboxOneGamepadAndroid>",
                     "isOptional": false,
                     "isOR": false
                 }

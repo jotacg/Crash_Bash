@@ -11,6 +11,10 @@ public class ScoreManager : MonoBehaviour
     //public static int player4Counter;
 
     public static int[] playerCounter;
+    private int[] activePlayer;
+
+    private int playersLeft = PlayerConfigurationManager.Instance.GetPlayerConfigs().Count; // Numero de jagadores qeu quedan -> Se inicializa con el count de la lista
+    public static bool finJuego = false;
 
     public GameObject fin;              // Texto al acabar la partida
 
@@ -20,7 +24,8 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         //player1Counter = player2Counter = player3Counter = player4Counter = 1;
-        playerCounter = new int[] {10, 10, 10, 10};
+        playerCounter = new int[] {1, 1, 10, 10};
+        activePlayer = new int[]  {1, 1, 1, 1};
     }
 
     // Update is called once per frame
@@ -30,7 +35,39 @@ public class ScoreManager : MonoBehaviour
         if(player1Counter <= 0)                                                          QUE NO SE LANCEN MAS BOLAS,
         {                                                                                QUE APAREZCA EL NOMBRE DEL GANADOR
             fin.SetActive(true);                                                         QUE APAREZCA UN MENU PARA VOLVER A JUGAR O IR A MENU GENERAL
-        }                                                                                QUE EL QUE GANA SE LE CAMBIE EL ACTIONMAP AL DE MENU PARA SELECCIONAR QUE HACER
         */
+
+        if(playersLeft == 1 && !finJuego){
+            for(int i = 0; i < PlayerConfigurationManager.Instance.GetPlayerConfigs().Count; i++)
+            {
+                if(playerCounter[i] > 0)
+                {
+                    Debug.Log("Gano el jugador " + (i+1));
+                    finJuego = true;
+                    fin.SetActive(true);
+                }
+            }
+        }
+
+        if(playerCounter[0] <= 0 && activePlayer[0] > 0)
+        {
+            playersLeft--;
+            activePlayer[0]--;
+        }
+        if(playerCounter[1] <= 0 && activePlayer[1] > 0)
+        {
+            playersLeft--;
+            activePlayer[1]--;
+        }
+        if(playerCounter[2] <= 0 && activePlayer[2] > 0)
+        {
+            playersLeft--;
+            activePlayer[2]--;
+        }
+        if(playerCounter[3] <= 0 && activePlayer[3] > 0)
+        {
+            playersLeft--;
+            activePlayer[3]--;
+        }
     }
 }

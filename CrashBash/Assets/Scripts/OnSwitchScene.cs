@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class OnSwitchScene : MonoBehaviour
 {
     public GameObject canvas;
-    public GameObject camera;
+    public GameObject mainCamera;
 
     [SerializeField]
     private Transform[] cameraSpawns;
@@ -33,7 +33,7 @@ public class OnSwitchScene : MonoBehaviour
 
         if(scene.name == "BallistixGame")
         {
-            camera.SetActive(true);
+            mainCamera.SetActive(true);
             canvas.SetActive(true);     // Activar las puntuaciones
             transform.GetChild(0).transform.position = cameraSpawns[this.GetComponent<PlayerInput>().playerIndex].position;
             transform.GetChild(0).transform.rotation = cameraSpawns[this.GetComponent<PlayerInput>().playerIndex].rotation;

@@ -43,10 +43,12 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnShock(obj);
         }
+        
         if (obj.action.name == controls.Menu.MenuMovement.name)
         {
-            Debug.Log("hola");
+           // Debug.Log("hola");
         }
+        
     }
 
     public void OnMove(CallbackContext context)

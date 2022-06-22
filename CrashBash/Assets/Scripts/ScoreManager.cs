@@ -11,21 +11,26 @@ public class ScoreManager : MonoBehaviour
     //public static int player4Counter;
 
     public static int[] playerCounter;
-    private int[] activePlayer;
+    public static int[] activePlayer;
 
-    private int playersLeft = PlayerConfigurationManager.Instance.GetPlayerConfigs().Count; // Numero de jagadores qeu quedan -> Se inicializa con el count de la lista
-    public static bool finJuego = false;
+    private int playersLeft;
+    public static bool finJuego;
 
     public GameObject fin;              // Texto al acabar la partida
 
-    public Text lifeCounter;
+    public Text winnerPlayer;
 
+    private void Awake()
+    {
+        finJuego = false;
+        playerCounter = new int[] {10, 10, 10, 10};
+        activePlayer = new int[]  {1, 1, 1, 1};
+        playersLeft = PlayerConfigurationManager.Instance.GetPlayerConfigs().Count; // Numero de jagadores qeu quedan -> Se inicializa con el count de la lista
+    }
     // Start is called before the first frame update
     void Start()
     {
         //player1Counter = player2Counter = player3Counter = player4Counter = 1;
-        playerCounter = new int[] {1, 1, 10, 10};
-        activePlayer = new int[]  {1, 1, 1, 1};
     }
 
     // Update is called once per frame
@@ -43,6 +48,7 @@ public class ScoreManager : MonoBehaviour
                 if(playerCounter[i] > 0)
                 {
                     Debug.Log("Gano el jugador " + (i+1));
+                    winnerPlayer.text = "Player " + (i+1) + " wins!";
                     finJuego = true;
                     fin.SetActive(true);
                 }

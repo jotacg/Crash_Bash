@@ -72,9 +72,14 @@ public class PlayerConfigurationManager : MonoBehaviour
         return playerConfigs;
     }
 
-    public void SetPlayerColor(int index, Material color)
+    public void SetPlayerMesh(int index, Mesh mesh)
     {
-        playerConfigs[index].playerMaterial = color;
+        playerConfigs[index].playerMesh = mesh;
+    }
+
+    public void SetPlayerMat(int index, Material mat)
+    {
+        playerConfigs[index].playerMat = mat;
     }
 
     public void ReadyPlayer(int index)
@@ -98,5 +103,6 @@ public class PlayerConfiguration
     public PlayerInput Input { get; private set; }
     public int PlayerIndex { get; private set; }
     public bool isReady { get; set; }
-    public Material playerMaterial {get; set;}
+    public Mesh playerMesh { get; set; }
+    public Material playerMat { get; set; }
 }

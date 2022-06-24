@@ -38,7 +38,7 @@ public class OnSwitchScene : MonoBehaviour
             canvas.SetActive(true);     // Activar las puntuaciones
             transform.GetChild(0).transform.position = cameraSpawns[this.GetComponent<PlayerInput>().playerIndex].position;
             transform.GetChild(0).transform.rotation = cameraSpawns[this.GetComponent<PlayerInput>().playerIndex].rotation;
-            this.GetComponent<PlayerInput>().SwitchCurrentActionMap("Player"); // Cambiar el Action Map al de player
+            //this.GetComponent<PlayerInput>().SwitchCurrentActionMap("Player"); // Cambiar el Action Map al de player
             Debug.Log(this.GetComponent<PlayerInput>().currentActionMap);
         }
     }

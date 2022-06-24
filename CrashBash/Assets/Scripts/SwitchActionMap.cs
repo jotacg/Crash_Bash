@@ -24,14 +24,18 @@ public class SwitchActionMap : MonoBehaviour
     {                                   // Switch case con el idex para poder identificar que jugador es y hacer el cambio de Action map
         if(SceneManager.GetActiveScene().name == "BallistixGame")
         {
+            //Debug.Log(controlMap.currentActionMap);
+            if(!ScoreManager.instruccionesJuego && controlMap.currentActionMap.name == "Menu")       // Si ya se han leido las instrucciones y el action map es el menu
+            {
+                controlMap.SwitchCurrentActionMap("Player");                                    // Se cambia el action map al del player para jugar
+            }
+
             switch (controlMap.playerIndex)             
             {
                 // JUGADOR 1
                 case 0:
                     if((ScoreManager.playerCounter[0] <= 0 || ScoreManager.finJuego) && !switchedMap)        //  Si el score es menor o igual a 0 y no se ha hecho el cambio de Mapa 
                     {
-                        Debug.Log(ScoreManager.playerCounter[0]);
-                        Debug.Log(ScoreManager.finJuego);
                         //controlMap.actions.FindActionMap("Player").Disable();
                         controlMap.SwitchCurrentActionMap("Menu");
                     }

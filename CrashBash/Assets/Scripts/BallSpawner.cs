@@ -7,9 +7,6 @@ public class BallSpawner : MonoBehaviour
     public GameObject[] spawners;   // Array de los lanzadores
     public Rigidbody bola; // Prefab de la bola
 
-    public GameObject prefabBola;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +25,7 @@ public class BallSpawner : MonoBehaviour
 
     void SpawnBall()
     {
-        if(!ScoreManager.finJuego)
+        if(!ScoreManager.finJuego && !ScoreManager.instruccionesJuego)
         {
             int indexSpawner = Random.Range(0,4);   // Selecciona un spawner al azar
             Rigidbody projectileInstance;

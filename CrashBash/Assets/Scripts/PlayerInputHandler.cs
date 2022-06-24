@@ -13,7 +13,9 @@ public class PlayerInputHandler : MonoBehaviour
     private ShockWaveForce shockWave;
 
     [SerializeField]
-    private MeshRenderer playerMesh;
+    private MeshFilter playerMesh;
+    [SerializeField]
+    private MeshRenderer playerMat;
 
     private PlayerInputActions controls;
 
@@ -29,7 +31,9 @@ public class PlayerInputHandler : MonoBehaviour
     public void InitializePlayer(PlayerConfiguration config)
     {
         playerConfig = config;
-        playerMesh.material = config.playerMaterial;
+        playerMesh.mesh = config.playerMesh;
+        playerMat.material = config.playerMat;
+
         config.Input.onActionTriggered += Input_onActionTriggered;
     }   
 

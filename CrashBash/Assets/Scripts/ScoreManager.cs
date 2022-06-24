@@ -15,14 +15,17 @@ public class ScoreManager : MonoBehaviour
 
     private int playersLeft;
     public static bool finJuego;
+    public static bool instruccionesJuego;
 
     public GameObject fin;              // Texto al acabar la partida
+    public GameObject rules;     // Texto unicial con las reglas
 
     public Text winnerPlayer;
 
     private void Awake()
     {
         finJuego = false;
+        instruccionesJuego = true;
         playerCounter = new int[] {10, 10, 10, 10};
         activePlayer = new int[]  {1, 1, 1, 1};
         playersLeft = PlayerConfigurationManager.Instance.GetPlayerConfigs().Count; // Numero de jagadores qeu quedan -> Se inicializa con el count de la lista
@@ -50,6 +53,7 @@ public class ScoreManager : MonoBehaviour
                     Debug.Log("Gano el jugador " + (i+1));
                     winnerPlayer.text = "Player " + (i+1) + " wins!";
                     finJuego = true;
+                    rules.SetActive(false);
                     fin.SetActive(true);
                 }
             }

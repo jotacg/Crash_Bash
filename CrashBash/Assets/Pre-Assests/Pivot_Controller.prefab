@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00cd2c7128c4f442b16283fb987b1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMesh: {fileID: 713311484037966462}
-  playerController: {fileID: 8144095137005340702, guid: 6a542ba70914a4a41b25553152c2f9bd, type: 3}
+  playerMesh: {fileID: 713311484037966463}
+  playerMat: {fileID: 713311484037966462}
 --- !u!1 &713311484037966456
 GameObject:
   m_ObjectHideFlags: 0

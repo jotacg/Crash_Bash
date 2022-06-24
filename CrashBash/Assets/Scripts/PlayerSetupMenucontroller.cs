@@ -40,16 +40,21 @@ public class PlayerSetupMenucontroller : MonoBehaviour
         }
     }
 
-    public void SelectColor(Material mat)
+    public void SelectMesh(Mesh mesh)
     {
         if(!inputEnabled) { return; }
 
-        PlayerConfigurationManager.Instance.SetPlayerColor(playerIndex, mat);
+        PlayerConfigurationManager.Instance.SetPlayerMesh(playerIndex, mesh);
         readyPanel.SetActive(true);
         readyButton.interactable = true;
         menuPanel.SetActive(false);
         readyButton.Select();
         
+    }
+
+    public void SelectMat(Material mat)
+    {
+        PlayerConfigurationManager.Instance.SetPlayerMat(playerIndex, mat);
     }
 
     public void ReadyPlayer()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3803916355909248527}
   - component: {fileID: 3803916355909248525}
   - component: {fileID: 3803916355909248524}
+  - component: {fileID: 6250500799267653664}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -79,6 +80,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Red
+--- !u!114 &6250500799267653664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803916355909248526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235b42ff00ce6344bad46023ef1e1b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3803916355979135753
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 296.59198, y: -62.301666}
+  m_AnchoredPosition: {x: 268.18, y: -62.301666}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3803916356217862969
@@ -479,7 +492,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3803916357426606267}
         m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SelectMesh
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Mesh, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3803916357426606267}
+        m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
+        m_MethodName: SelectMat
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2100000, guid: d04a226eb526a97498a329a66076b453, type: 2}
@@ -691,7 +716,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3803916357426606267}
         m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SelectMesh
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Mesh, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3803916357426606267}
+        m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
+        m_MethodName: SelectMat
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2100000, guid: 8d2ead2d57643b94c94a9e8a990dc972, type: 2}
@@ -814,7 +851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.631075, y: -62.301666}
+  m_AnchoredPosition: {x: 11.6311035, y: -62.301666}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3803916357095669932
@@ -1019,7 +1056,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3803916357426606267}
         m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SelectMesh
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Mesh, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3803916357426606267}
+        m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
+        m_MethodName: SelectMat
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2100000, guid: cef99218e61a58f4e94aadd4f2a0ea0d, type: 2}
@@ -1152,7 +1201,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3803916357426606267}
         m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SelectMesh
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Mesh, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3803916357426606267}
+        m_TargetAssemblyTypeName: PlayerSetupMenucontroller, Assembly-CSharp
+        m_MethodName: SelectMat
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2100000, guid: 335e3150935c5814e880c457a121226c, type: 2}
@@ -1225,7 +1286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

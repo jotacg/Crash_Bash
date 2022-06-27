@@ -8,6 +8,9 @@ public class ReloadScene : MonoBehaviour
 {
     private Scene gameScene;
 
+    public Animator transition;
+    public float transitiontime = 1f;
+
     private void Awake()
     {
         gameScene = SceneManager.GetActiveScene();
@@ -26,12 +29,14 @@ public class ReloadScene : MonoBehaviour
 
     public void PlayAgainScene()
     {
-        SceneManager.LoadScene(gameScene.name);
+        //SceneManager.LoadScene(gameScene.name);
+        StartCoroutine(LoadLevel(gameScene.name));
     }
 
     public void CharacterSelectionScene()
     {
-        SceneManager.LoadScene("BallistixCharacterSelection");
+        //SceneManager.LoadScene("BallistixCharacterSelection");
+        StartCoroutine(LoadLevel("BallistixCharacterSelection"));
         Destroy(GameObject.Find("PlayerConfigurationManager"));
     }
 
@@ -48,5 +53,14 @@ public class ReloadScene : MonoBehaviour
     public void GoGame ()
     {
         ScoreManager.instruccionesJuego = false;
+    }
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }

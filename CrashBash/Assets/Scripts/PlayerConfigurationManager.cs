@@ -16,6 +16,9 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private Scene scene;
 
+    public Animator transition;
+    public float transitiontime = 1f;
+
     private List<PlayerConfiguration> playerConfigs;
     //[SerializeField]
     //private int MaxPlayers = 2;
@@ -94,8 +97,18 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[index].isReady = true;
         if (playerConfigs.All(p => p.isReady == true))
         {
-            SceneManager.LoadScene("BallistixGame");
+            //SceneManager.LoadScene("BallistixGame");
+            StartCoroutine(LoadLevel("BallistixGame"));
         }
+    }
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }
 

@@ -1,27 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class PlayerSetupMenucontroller : MonoBehaviour
 {
-   private int playerIndex;
+    private int playerIndex;
 
     [SerializeField]
-    private Text titleText;
+    private TextMeshProUGUI titleText;
     [SerializeField]
     private GameObject readyPanel;
     [SerializeField]
     private GameObject menuPanel;
     [SerializeField]
     private Button readyButton;
+    [SerializeField]
+    private Button cancelButton;
+    [SerializeField]
+    private Button characterButton;
 
     private float ignoreInputTime = 1.0f;
     private bool inputEnabled;
     public void setPlayerIndex(int pi)
     {
         playerIndex = pi;
-        titleText.text = "Player " + (pi + 1).ToString();
+        titleText.SetText("Player " + (pi + 1).ToString());
         ignoreInputTime = Time.time + ignoreInputTime;
     }
 
@@ -52,6 +57,15 @@ public class PlayerSetupMenucontroller : MonoBehaviour
         
     }
 
+    public void BackToSelector()
+    {
+        if(!inputEnabled) { return; }
+
+        readyPanel.SetActive(false);
+        menuPanel.SetActive(true);
+        characterButton.Select();
+    }
+
     public void SelectMat(Material mat)
     {
         PlayerConfigurationManager.Instance.SetPlayerMat(playerIndex, mat);
@@ -63,5 +77,11 @@ public class PlayerSetupMenucontroller : MonoBehaviour
 
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
         readyButton.gameObject.SetActive(false);
+        cancelButton.gameObject.SetActive(false);
+    }
+
+    public void SetIcon(Texture textura)
+    {
+        PlayerConfigurationManager.iconos[playerIndex] = textura;
     }
 }

@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerController movement;
     private TiltPlayerEffect tilt;
     private ShockWaveForce shockWave;
+    private PauseMenu pause;
 
     [SerializeField]
     private MeshFilter playerMesh;
@@ -24,6 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
         movement = GetComponent<PlayerController>();
         tilt = GetComponentInChildren<TiltPlayerEffect>();
         shockWave = GetComponent<ShockWaveForce>();
+        pause = GetComponent<PauseMenu>();
 
         controls = new PlayerInputActions();
     }
@@ -47,10 +49,9 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnShock(obj);
         }
-        
-        if (obj.action.name == controls.Menu.MenuMovement.name)
+        if (obj.action.name == controls.Player.Pause.name)
         {
-           // Debug.Log("hola");
+            OnPause(obj);
         }
         
     }
@@ -69,6 +70,14 @@ public class PlayerInputHandler : MonoBehaviour
         if(shockWave != null)
         {
             shockWave.ExecShockWave(context);
+        }
+    }
+
+    public void OnPause(CallbackContext context)
+    {
+        if(pause != null)
+        {
+            pause.Pause(context);
         }
     }
 }

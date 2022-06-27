@@ -30,6 +30,16 @@ public class SwitchActionMap : MonoBehaviour
                 controlMap.SwitchCurrentActionMap("Player");                                    // Se cambia el action map al del player para jugar
             }
 
+            if(PauseMenu.gamePaused && controlMap.currentActionMap.name == "Player")            // Si el juego se para y el action map es Player 
+            {
+                controlMap.SwitchCurrentActionMap("Menu");                                      // Se cambia al de menu
+            }
+
+            if(!PauseMenu.gamePaused && !ScoreManager.instruccionesJuego && controlMap.currentActionMap.name == "Menu")   // Si el juego no esta parado
+            {                                                                                                             // no estamos en las instrucciones
+                controlMap.SwitchCurrentActionMap("Player");                                                              // y el action map es el menu
+            }                                                                                                             // se cambia el action map al de player
+
             switch (controlMap.playerIndex)             
             {
                 // JUGADOR 1

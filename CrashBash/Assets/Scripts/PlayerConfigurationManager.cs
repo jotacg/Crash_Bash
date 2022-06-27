@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerConfigurationManager : MonoBehaviour
 {
-    public static bool jugador1 = false;    // Variable global para saber si el jugador uno esta en la partida (true) o no (false)
-    public static bool jugador2 = false;    // Variable global para saber si el jugador dos esta en la partida (true) o no (false)
-    public static bool jugador3 = false;    // Variable global para saber si el jugador tres esta en la partida (true) o no (false)
-    public static bool jugador4 = false;    // Variable global para saber si el jugador cuatro esta en la partida (true) o no (false)
+    public static bool jugador1;    // Variable global para saber si el jugador uno esta en la partida (true) o no (false)
+    public static bool jugador2;    // Variable global para saber si el jugador dos esta en la partida (true) o no (false)
+    public static bool jugador3;    // Variable global para saber si el jugador tres esta en la partida (true) o no (false)
+    public static bool jugador4;    // Variable global para saber si el jugador cuatro esta en la partida (true) o no (false)
+    
+    public static Texture[] iconos = new Texture[4];
 
     private Scene scene;
 
@@ -22,6 +24,11 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private void Awake()
     {
+        jugador1 = false;
+        jugador2 = false;
+        jugador3 = false;
+        jugador4 = false;
+
         scene = SceneManager.GetActiveScene();
 
         if(Instance != null)

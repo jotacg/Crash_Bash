@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounce: {fileID: 13400000, guid: 3e894f377106a82469f4d9acf3e0639b, type: 2}
-  Trigger: {fileID: 3090216733780489549, guid: 0a3de6ea38daf334d937acd079160615, type: 3}
+  Trigger: {fileID: 5930127693484136323, guid: 4c03e07b878ecd949b81447f5dcfdf65, type: 3}
   DestroyTrigger:
   - {fileID: 1648031092920125994, guid: b552200cc8a56544cab6aa3aed8d15a8, type: 3}
   - {fileID: 1056336826382554645, guid: 9c52c6d34bdcc414f8832df3effd4bb3, type: 3}

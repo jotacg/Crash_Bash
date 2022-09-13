@@ -70,7 +70,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5c396b52-32ba-4c9b-8017-d38cf27e029e"",
-                    ""path"": ""<HID::BDA NSW wired controller>/button2"",
+                    ""path"": ""<HID::BDA NSW wired controller>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -81,7 +81,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f5ae5472-7b3a-47cc-964c-03c00275b36e"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Playstation 4"",

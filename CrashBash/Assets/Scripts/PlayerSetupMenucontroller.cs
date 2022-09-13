@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerSetupMenucontroller : MonoBehaviour
 {
     private int playerIndex;
-
+    public GameObject readyText;
     [SerializeField]
     private TextMeshProUGUI titleText;
     [SerializeField]
@@ -76,6 +76,7 @@ public class PlayerSetupMenucontroller : MonoBehaviour
         if (!inputEnabled) { return; }
 
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
+        readyText.gameObject.SetActive(true);
         readyButton.gameObject.SetActive(false);
         cancelButton.gameObject.SetActive(false);
     }

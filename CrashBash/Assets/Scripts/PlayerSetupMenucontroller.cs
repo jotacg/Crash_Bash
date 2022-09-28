@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerSetupMenucontroller : MonoBehaviour
 {
+
+    //public GameObject characterPreview;
+    
     private int playerIndex;
     public GameObject readyText;
     [SerializeField]
@@ -54,9 +57,21 @@ public class PlayerSetupMenucontroller : MonoBehaviour
         readyButton.interactable = true;
         menuPanel.SetActive(false);
         readyButton.Select();
-        
-    }
 
+        //characterPreview.GetComponent<MeshFilter>().mesh = meshPreview;
+        //characterPreview.SetActive(true);
+
+    }
+/*
+    public void SelectMeshPreview(Mesh meshPreview)
+    {
+        if(!inputEnabled) { return; }
+        characterPreview.GetComponent<Animator>().SetBool("SelectedChar", true);
+        characterPreview.GetComponent<MeshFilter>().mesh = meshPreview;
+        characterPreview.GetComponent<MeshRenderer>().enabled = true;
+
+    }
+*/
     public void BackToSelector()
     {
         if(!inputEnabled) { return; }
@@ -64,6 +79,9 @@ public class PlayerSetupMenucontroller : MonoBehaviour
         readyPanel.SetActive(false);
         menuPanel.SetActive(true);
         characterButton.Select();
+
+        //characterPreview.GetComponent<Animator>().SetBool("SelectedChar", false);
+        //characterPreview.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void SelectMat(Material mat)

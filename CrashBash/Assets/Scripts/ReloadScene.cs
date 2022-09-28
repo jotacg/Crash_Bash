@@ -35,6 +35,11 @@ public class ReloadScene : MonoBehaviour
 
     public void CharacterSelectionScene()
     {
+        if(PauseMenu.gamePaused)
+        {
+            Time.timeScale = 1f;
+            PauseMenu.gamePaused = false;
+        }
         //SceneManager.LoadScene("BallistixCharacterSelection");
         StartCoroutine(LoadLevel("BallistixCharacterSelection"));
         Destroy(GameObject.Find("PlayerConfigurationManager"));

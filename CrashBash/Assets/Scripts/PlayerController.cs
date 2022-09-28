@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public Transform pivot;
-    public GameObject mesh;
     public float inercia_base = 2f;   // Inercia base
     public float inercia_maxima  = 3f;   // Inercia maxima
     private float inercia_izq;   // Medicion momentum hacia la izquierda

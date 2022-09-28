@@ -51,7 +51,7 @@ public class PlayerConfigurationManager : MonoBehaviour
     {
         if(scene.name == "BallistixCharacterSelection")
         {
-            Debug.Log("player joined " + pi.playerIndex);
+//            Debug.Log("player joined " + pi.playerIndex);
             pi.transform.SetParent(transform);
 
             if(!playerConfigs.Any(p => p.PlayerIndex == pi.playerIndex))

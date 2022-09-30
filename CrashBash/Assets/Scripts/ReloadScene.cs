@@ -45,6 +45,18 @@ public class ReloadScene : MonoBehaviour
         Destroy(GameObject.Find("PlayerConfigurationManager"));
     }
 
+    public void MainMenuScene()
+    {
+        if(PauseMenu.gamePaused)
+        {
+            Time.timeScale = 1f;
+            PauseMenu.gamePaused = false;
+        }
+        //SceneManager.LoadScene("BallistixCharacterSelection");
+        StartCoroutine(LoadLevel("MainMenu"));
+        Destroy(GameObject.Find("PlayerConfigurationManager"));
+    }
+
     public void DisablePanel (GameObject panel)
     {
         panel.SetActive(false);

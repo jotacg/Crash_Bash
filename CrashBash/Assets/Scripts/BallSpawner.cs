@@ -29,7 +29,7 @@ public class BallSpawner : MonoBehaviour
         {
             int indexSpawner = Random.Range(0,4);   // Selecciona un spawner al azar
             Rigidbody projectileInstance;
-            float desviacionRandom = Random.Range(1500f,2000f); // Desvio para el lanzamiento
+            float desviacionRandom = Random.Range(1000f,1200f); // Desvio para el lanzamiento
             int masMenos = Random.Range(0,2)*2-1;               // random +1 -1
             Transform extremoCanon = spawners[indexSpawner].transform.GetChild(0).transform.GetChild(0);    // obtener el extremo del canion que es el hijo del hijo
             extremoCanon.transform.Rotate(0f,0f,desviacionRandom*masMenos*Time.deltaTime);                  // se gira con la desviacion calculada

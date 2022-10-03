@@ -49,6 +49,7 @@ public class ShockWaveForce : MonoBehaviour
         if(timer >= timerRange)    // Intervalos de 1.5 segundos para que no se utilice todo el rato
         {
             timer = 0f;                                     // resetea el timer
+            this.GetComponent<AudioSource>().Play();
             ShockWaveVFX();                                    // Aplica la fuerza
             DisplayParticle();
             

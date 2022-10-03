@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     {
         finJuego = false;
         instruccionesJuego = true;
-        playerCounter = new int[] {10, 1, 10, 10};
+        playerCounter = new int[] {10, 10, 10, 10};
         activePlayer = new int[]  {1, 1, 1, 1};
         playersLeft = PlayerConfigurationManager.Instance.GetPlayerConfigs().Count; // Numero de jagadores qeu quedan -> Se inicializa con el count de la lista
     }

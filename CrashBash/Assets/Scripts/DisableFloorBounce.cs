@@ -23,6 +23,8 @@ public class DisableFloorBounce : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)      // para que la cuando salga la bola no rebote y se vaya
     {
+        this.GetComponent<AudioSource>().Play();
+        
         if(control == false)                        // Una vez que toca el suelo se le aplica el physic material
         {
             if (collision.gameObject.name == Trigger.name)  

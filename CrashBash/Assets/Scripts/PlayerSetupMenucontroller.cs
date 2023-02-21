@@ -28,6 +28,7 @@ public class PlayerSetupMenucontroller : MonoBehaviour
     private bool inputEnabled;
     public void setPlayerIndex(int pi)
     {
+        // Fija un indice para el jugador y cambia su nombre dependiendo del jugadr que sea
         playerIndex = pi;
         titleText.SetText("Player " + (pi + 1).ToString());
         ignoreInputTime = Time.time + ignoreInputTime;
@@ -42,6 +43,7 @@ public class PlayerSetupMenucontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Inhabilita la seleccion de personaje durante un momento para no escoger un personaje sin querer
         if(Time.time > ignoreInputTime)
         {
             inputEnabled = true;
@@ -52,40 +54,29 @@ public class PlayerSetupMenucontroller : MonoBehaviour
     {
         if(!inputEnabled) { return; }
 
+        // Selecciona la malla del personaje seleccionado
         PlayerConfigurationManager.Instance.SetPlayerMesh(playerIndex, mesh);
+        // Activa los paneles ready y desactiva los de seleccion de personajes
         readyPanel.SetActive(true);
         readyButton.interactable = true;
         menuPanel.SetActive(false);
         readyButton.Select();
 
-        //characterPreview.GetComponent<MeshFilter>().mesh = meshPreview;
-        //characterPreview.SetActive(true);
-
     }
-/*
-    public void SelectMeshPreview(Mesh meshPreview)
-    {
-        if(!inputEnabled) { return; }
-        characterPreview.GetComponent<Animator>().SetBool("SelectedChar", true);
-        characterPreview.GetComponent<MeshFilter>().mesh = meshPreview;
-        characterPreview.GetComponent<MeshRenderer>().enabled = true;
 
-    }
-*/
     public void BackToSelector()
     {
         if(!inputEnabled) { return; }
-
+        // Activa los paneles de seleccion de personajes y desactiva los de ready
         readyPanel.SetActive(false);
         menuPanel.SetActive(true);
         characterButton.Select();
 
-        //characterPreview.GetComponent<Animator>().SetBool("SelectedChar", false);
-        //characterPreview.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void SelectMat(Material mat)
     {
+        // Selecciona el material para la malla seleccionada
         PlayerConfigurationManager.Instance.SetPlayerMat(playerIndex, mat);
     }
 
@@ -93,6 +84,7 @@ public class PlayerSetupMenucontroller : MonoBehaviour
     {
         if (!inputEnabled) { return; }
 
+        // El jugador cambia al estado de listo y se desactivan los paneles de ready
         PlayerConfigurationManager.Instance.ReadyPlayer(playerIndex);
         readyText.gameObject.SetActive(true);
         readyButton.gameObject.SetActive(false);
@@ -101,6 +93,7 @@ public class PlayerSetupMenucontroller : MonoBehaviour
 
     public void SetIcon(Texture textura)
     {
+        // Selecciona la textura para la malla seleccionada
         PlayerConfigurationManager.iconos[playerIndex] = textura;
     }
 }

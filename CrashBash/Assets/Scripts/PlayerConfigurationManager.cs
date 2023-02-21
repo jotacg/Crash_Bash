@@ -16,12 +16,16 @@ public class PlayerConfigurationManager : MonoBehaviour
 
     private Scene scene;
 
-    public Animator transition;
-    public float transitiontime = 1f;
+    [SerializeField]
+    private Animator transition;
+
+    [SerializeField]
+    private float transitiontime = 1f;
+
+    [SerializeField]
+    private string gameScene = "BallistixGame";
 
     private List<PlayerConfiguration> playerConfigs;
-    //[SerializeField]
-    //private int MaxPlayers = 2;
 
     public static PlayerConfigurationManager Instance { get; private set; }
 
@@ -97,8 +101,7 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[index].isReady = true;
         if (playerConfigs.All(p => p.isReady == true))
         {
-            //SceneManager.LoadScene("BallistixGame");
-            StartCoroutine(LoadLevel("BallistixGame"));
+            StartCoroutine(LoadLevel(gameScene));
         }
     }
 
